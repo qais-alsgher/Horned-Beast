@@ -7,14 +7,9 @@ import Row from 'react-bootstrap/Row';
 
 
 class Main extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {favorite: 0}
-      }
+    
 
-      handleClick=()=>{
-        this.setState({favorite:this.state.favorite + 1});
-      }
+      
 
 render(){
 
@@ -27,12 +22,11 @@ render(){
             
             Data.map((ele)=>
             <Col>
-            <HornedBeast title={ele.title}  url={ele.image_url} desc={ele.description} onClick={this.handleClick}/>
+            <HornedBeast title={ele.title}  url={ele.image_url} desc={ele.description} />
             </Col>
             )
             
         }
-                <span>`nuper of favorie= ${this.favorite}❤` =</span>
                 </Row>
         </div>
        
