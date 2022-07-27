@@ -1,39 +1,28 @@
-
-
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Modal from 'react-bootstrap/Modal';
+import MadalCar from './mdalCar';
 
-
-
-    
 
 class HornedBeast extends React.Component{
 
     constructor(props){
         super(props);
         this.state={
-            show:false,
+            show:false ,
             favorite: 0
         }
 
     }
-    // constructor(props){
-    //     super(props);
-    //     this.state = {favorite: 0}
-    //   }
-
     handleClose = () => {
         this.setState({
-            show:!this.state.show
+            show:false
     
         })
       }
 
       handleShow = () => {
         this.setState({
-            show:!this.state.show
+            show:true
     
         })
        }
@@ -52,38 +41,19 @@ return(
         <Card.Body>
          <Card.Title>{this.props.title}</Card.Title>
          <Card.Text>
-          {this.props.desc}<span>{this.state.favorite}❤=</span>
+          {this.props.desc}<span>{this.state.favorite}❤</span>
          </Card.Text>
-         <Button variant="primary">Go somewhere</Button>
         </Card.Body>
          </Card>
-         {/* modal component */}
-    <Modal show={this.state.show} onHide={this.handleClose}>
-    <Modal.Header closeButton>
-      <Modal.Title>child</Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={this.props.url} />
-      <Card.Body>
-        <Card.Title>{this.props.title}</Card.Title>
-        <Card.Text>
-        {this.props.desc}
-        </Card.Text>
-        <span>{this.state.favorite}❤=</span>
-      </Card.Body>
-    </Card>
-    </Modal.Body>
-    <Modal.Footer>
-      <Button variant="secondary" onClick={this.handleClose}>
-        Close
-      </Button>
-      <Button variant="primary" onClick={this.handleClick}>
-        Add to favorite
-      </Button>
-    </Modal.Footer>
-  </Modal>
-</>
+          <MadalCar 
+          handleClose={this.handleClose}
+          handleShow={this.handleShow}
+          handleClick={this.handleClick}
+          url={this.props.url}
+          title={this.props.title}
+          this={this.props.desc}
+          />
+      </>
 
         )
 
