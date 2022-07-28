@@ -14,18 +14,16 @@ class App extends React.Component {
     super(props);
     this.state={
 
-        numperHourn:"",
         dataAn:Data
     }
 }
 
 handleSubmit=(e)=>{
     e.preventDefault();
-    this.state={
-      numperHourn:e.target.value
-    }
+     const numperHourn=parseInt(e.target.value);
+
     this.setState({
-      dataAn:Data.filter((ele)=>ele.horns===+this.state.numperHourn)
+      dataAn:Data.filter((ele)=>ele.horns===numperHourn)
     })
   }
 
