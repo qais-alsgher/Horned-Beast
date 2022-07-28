@@ -1,6 +1,6 @@
 
 import './App.css';
-import React,{Component} from 'react';
+import React from 'react';
 import Header from './component/header';
 import Footer from  './component/footer';
 import Main from './component/main';
@@ -25,13 +25,18 @@ handleSubmit=(e)=>{
       numperHourn:e.target.value
     }
     this.setState({
-      dataAn:Data.filter((ele)=>ele.horns==this.state.numperHourn)
+      dataAn:Data.filter((ele)=>ele.horns===+this.state.numperHourn)
     })
   }
 
   render(){
     return(
       <>
+      
+      <div className="App">
+      <Header />
+<>
+
       <Form onChange={this.handleSubmit}>
         <Form.Label htmlFor="numperHourn">pls select numper of Horned</Form.Label>
         <Form.Select id="numperHourn" >
@@ -41,10 +46,11 @@ handleSubmit=(e)=>{
           <option value="4">4 Horned</option>
         </Form.Select>
        
-      </Form> 
+        </Form> 
 
-      <div className="App">
-      <Header />
+</>
+
+
       <Main dataAn={this.state.dataAn}/>
       <Footer />
       </div>

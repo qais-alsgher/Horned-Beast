@@ -41,8 +41,9 @@ return(
         <Card.Body>
          <Card.Title>{this.props.title}</Card.Title>
          <Card.Text>
-          {this.props.desc}<span>{this.state.favorite}❤</span>
+          {this.props.desc}
          </Card.Text>
+         <span>{this.state.favorite}❤</span>
         </Card.Body>
          </Card>
           <MadalCar 
@@ -53,6 +54,7 @@ return(
           title={this.props.title}
           desc={this.props.desc}
           show={this.state.show}
+          favorite={this.state.favorite}
           />
       </>
 
