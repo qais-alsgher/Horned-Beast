@@ -49,8 +49,6 @@ handleSubmit=(e)=>{
         </Form> 
 
 </>
-
-
       <Main dataAn={this.state.dataAn}/>
       <Footer />
       </div>
