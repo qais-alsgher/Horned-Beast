@@ -1,3 +1,4 @@
+
 import React from "react";
 import HornedBeast from "./HornedBeast";
 import Col from 'react-bootstrap/Col';
@@ -15,9 +16,6 @@ render(){
 
     return(
     <>
-    
-        
-
 
 
         <div>

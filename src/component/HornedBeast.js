@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import Card from 'react-bootstrap/Card';
 import MadalCar from './mdalCar';
 
@@ -36,8 +36,8 @@ return(
     <>
   
             {/* card component */}
-        <Card style={{ width: '18rem' }} onClick={this.handleShow} >
-        <Card.Img variant="top" src={this.props.url} />
+        <Card style={{ width: '18rem' }}  onClick={this.handleClick} >
+        <Card.Img variant="top" src={this.props.url} onClick={this.handleShow}/>
         <Card.Body>
          <Card.Title>{this.props.title}</Card.Title>
          <Card.Text>
@@ -51,7 +51,8 @@ return(
           handleClick={this.handleClick}
           url={this.props.url}
           title={this.props.title}
-          this={this.props.desc}
+          desc={this.props.desc}
+          show={this.state.show}
           />
       </>
 
