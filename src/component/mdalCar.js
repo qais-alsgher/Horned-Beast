@@ -3,7 +3,7 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import HornedBeast from './HornedBeast';
+
 
 class ModalCar extends React.Component{
 constructor(props){
@@ -14,17 +14,17 @@ constructor(props){
   }
 }
 handleClose = () => {
- this.props.handleClose()
+ this.props.handleClose();
     
 }
 
 handleShow = () => {
-  this.props.handleShow()
+  this.props.handleShow();
       }
  
 
  handleClick=()=>{
-  this.props.handleClick()
+  this.props.handleClick();
 }
 
 
@@ -38,23 +38,19 @@ return(
       <Modal.Title>Horned HornedBeast</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={this.props.url} onClick={this.handleClick}/>
+    <Card style={{ width: '18rem' }} onClick={this.handleClick}>
+      <Card.Img variant="top" src={this.props.url} />
       <Card.Body>
         <Card.Title>{this.props.title}</Card.Title>
         <Card.Text>
-        {this.props.desc}
+        {this.props.desc} <span>{this.props.favorite}❤</span>
         </Card.Text>
-        <span>{this.favorite}❤</span>
       </Card.Body>
     </Card>
     </Modal.Body>
     <Modal.Footer>
       <Button variant="secondary" onClick={this.handleClose}>
         Close
-      </Button>
-      <Button variant="primary" onClick={this.handleClick}>
-        Add to favorite
       </Button>
     </Modal.Footer>
   </Modal>
